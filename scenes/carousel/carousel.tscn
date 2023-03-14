@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3mrcvy4i2qwg"]
+
+[ext_resource type="Texture2D" uid="uid://by0ss5f7r057" path="res://assets/Characters/character_0000.png" id="1_o0x8y"]
+[ext_resource type="Script" path="res://scenes/carousel/carousel.gd" id="1_qyvdg"]
+
+[node name="Carousel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -678.0
+offset_bottom = -552.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qyvdg")
+metadata/_edit_lock_ = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_left = -12.0
+offset_right = 12.0
+offset_bottom = 24.0
+pivot_offset = Vector2(32, 8)
+metadata/_edit_group_ = true
+
+[node name="ActualSprite" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(12, 12)
+texture = ExtResource("1_o0x8y")
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

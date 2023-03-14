@@ -1,0 +1,145 @@
+[gd_scene load_steps=5 format=3 uid="uid://20pj4ni33j5m"]
+
+[ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_fi0i8"]
+[ext_resource type="FontFile" uid="uid://7y1bjo8b42xe" path="res://assets/fonts/Kenney Pixel Square.ttf" id="2_ojyi6"]
+[ext_resource type="FontFile" uid="uid://ehad7l3e4y2d" path="res://assets/fonts/Kenney Pixel.ttf" id="3_w0uvr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_88eor"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fi0i8")
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.560784, 1, 1, 1)
+metadata/_edit_lock_ = true
+
+[node name="Logo" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 42.0
+offset_right = 1153.0
+offset_bottom = 201.0
+metadata/_edit_group_ = true
+
+[node name="LogoJumpy" type="RichTextLabel" parent="Logo"]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 11.0
+offset_right = 547.0
+offset_bottom = 142.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_w0uvr")
+theme_override_font_sizes/normal_font_size = 160
+bbcode_enabled = true
+text = "[center][shake rate=3 level=10][tornado freq=5 radius=5]Jumpy"
+
+[node name="LogoJumper" type="RichTextLabel" parent="Logo"]
+offset_left = 558.0
+offset_top = 7.0
+offset_right = 964.0
+offset_bottom = 177.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_w0uvr")
+theme_override_font_sizes/normal_font_size = 160
+bbcode_enabled = true
+text = "[center][wave amp=50 freq=8 ]Jumper"
+
+[node name="SoloPlayButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -224.0
+offset_top = 273.0
+offset_right = 263.0
+offset_bottom = 393.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_ojyi6")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_88eor")
+metadata/_edit_group_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SoloPlayButton"]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 488.0
+offset_bottom = 88.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.94902, 0.94902, 0.94902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_ojyi6")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center][wave amp=25 freq=5]C o r r i d a   s o l o"
+
+[node name="MultiplayerButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -249.0
+offset_top = 368.0
+offset_right = 238.0
+offset_bottom = 488.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_ojyi6")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_88eor")
+metadata/_edit_group_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MultiplayerButton"]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 543.0
+offset_bottom = 88.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.94902, 0.94902, 0.94902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_ojyi6")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center][wave amp=25 freq=5]M u l t i j o g a d o r"
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -237.0
+offset_top = 457.0
+offset_right = 250.0
+offset_bottom = 577.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_ojyi6")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_88eor")
+metadata/_edit_group_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ExitButton"]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 488.0
+offset_bottom = 88.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.94902, 0.94902, 0.94902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_ojyi6")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center][wave amp=25 freq=5]S A I R"
+
+[connection signal="pressed" from="SoloPlayButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MultiplayerButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_button_pressed"]

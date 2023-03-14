@@ -1,0 +1,122 @@
+[gd_scene load_steps=9 format=3 uid="uid://dx7y6rdmcxbql"]
+
+[ext_resource type="Texture2D" uid="uid://bjika8ykcbe41" path="res://assets/Characters/character_0002.png" id="2_hihro"]
+[ext_resource type="PackedScene" uid="uid://bxvem3k70ecnc" path="res://scenes/platform/grass_platform/grass_platform.tscn" id="2_vg5dh"]
+[ext_resource type="Texture2D" uid="uid://c38obrso6duvq" path="res://scenes/mockup/sledgehammer.png.png" id="3_7p0v2"]
+[ext_resource type="Texture2D" uid="uid://c6bfoljag1w5" path="res://assets/Characters/character_0004.png" id="3_iytd7"]
+[ext_resource type="Texture2D" uid="uid://fsrfbaean0t0" path="res://scenes/mockup/lootbox.png.png" id="5_wq10a"]
+[ext_resource type="FontFile" uid="uid://7y1bjo8b42xe" path="res://assets/fonts/Kenney Pixel Square.ttf" id="6_bq5ft"]
+[ext_resource type="Texture2D" uid="uid://cvh6i4sabavhd" path="res://scenes/mockup/crystal.png" id="7_eauwy"]
+[ext_resource type="Texture2D" uid="uid://binanaqaqwh6h" path="res://scenes/mockup/hook.png" id="8_rjv2b"]
+
+[node name="Mockup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 322.0
+offset_top = 4.0
+offset_right = 939.0
+offset_bottom = 646.0
+
+[node name="GrassPlatform1" parent="ColorRect" instance=ExtResource("2_vg5dh")]
+position = Vector2(193, 555)
+
+[node name="GrassPlatform2" parent="ColorRect" instance=ExtResource("2_vg5dh")]
+position = Vector2(384, 375)
+
+[node name="GrassPlatform3" parent="ColorRect" instance=ExtResource("2_vg5dh")]
+position = Vector2(198, 329)
+
+[node name="GrassPlatform4" parent="ColorRect" instance=ExtResource("2_vg5dh")]
+position = Vector2(408, 232)
+
+[node name="GrassPlatform5" parent="ColorRect" instance=ExtResource("2_vg5dh")]
+position = Vector2(241, 159)
+
+[node name="GrassPlatform6" parent="ColorRect" instance=ExtResource("2_vg5dh")]
+position = Vector2(428, 471)
+
+[node name="Player 1" type="Sprite2D" parent="ColorRect"]
+position = Vector2(191, 263)
+scale = Vector2(2, 2.017)
+texture = ExtResource("2_hihro")
+
+[node name="Player 2" type="Sprite2D" parent="ColorRect"]
+position = Vector2(440, 422)
+scale = Vector2(2, 2)
+texture = ExtResource("3_iytd7")
+
+[node name="Sledgehammerpng" type="Sprite2D" parent="."]
+position = Vector2(127, 387)
+rotation = -0.966912
+scale = Vector2(1.37593, 1.39504)
+texture = ExtResource("3_7p0v2")
+
+[node name="Lootboxpng" type="Sprite2D" parent="."]
+position = Vector2(607, 286)
+scale = Vector2(0.418182, 0.418182)
+texture = ExtResource("5_wq10a")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Player 1 Icon" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(115, 80)
+scale = Vector2(4.20833, 4.24311)
+texture = ExtResource("2_hihro")
+
+[node name="Label" type="Label" parent="CanvasLayer/Player 1 Icon"]
+offset_left = -22.0606
+offset_top = 13.5758
+offset_right = 20.9394
+offset_bottom = 28.5758
+theme_override_fonts/font = ExtResource("6_bq5ft")
+theme_override_font_sizes/font_size = 8
+text = "Player 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Player 1 Icon"]
+offset_left = -7.0
+offset_top = 29.0
+offset_right = 5.0
+offset_bottom = 38.0
+
+[node name="Crystal" type="Sprite2D" parent="CanvasLayer/Player 1 Icon"]
+position = Vector2(-0.950684, 33.4663)
+scale = Vector2(0.00797029, 0.00790496)
+texture = ExtResource("7_eauwy")
+
+[node name="Player 2 Icon" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(1065, 64)
+scale = Vector2(4.125, 4.125)
+texture = ExtResource("3_iytd7")
+
+[node name="Label" type="Label" parent="CanvasLayer/Player 2 Icon"]
+offset_left = -25.2121
+offset_top = 17.697
+offset_right = 17.7879
+offset_bottom = 32.697
+theme_override_fonts/font = ExtResource("6_bq5ft")
+theme_override_font_sizes/font_size = 8
+text = "Player 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Player 2 Icon"]
+offset_left = -6.78784
+offset_top = 30.7879
+offset_right = 5.21216
+offset_bottom = 39.7879
+
+[node name="Hook" type="Sprite2D" parent="CanvasLayer/Player 2 Icon"]
+position = Vector2(-0.693359, 35.755)
+scale = Vector2(0.0253319, 0.0223186)
+texture = ExtResource("8_rjv2b")
