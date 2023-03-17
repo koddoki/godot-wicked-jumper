@@ -4,12 +4,16 @@ const GRAVITY = 15;
 const JUMP_FORCE = 10;
 const SPEED = 5;
 
+@export_enum("player1","player2") var active_player = "player1"
+
+
 var direction;
 
 func movement(delta):
+	print (active_player)
 	velocity.y += GRAVITY * delta;
 	var collision = move_and_collide(velocity);
-	direction = int(Input.get_axis("ui_left", "ui_right"));
+	direction = int(Input.get_axis(active_player+"_left", active_player+"_right"));
 	velocity.x = lerp(int(velocity.x), direction * SPEED, 0.4)
 	
 	if collision:
@@ -17,7 +21,7 @@ func movement(delta):
 
 
 func teleport():
-	position.x = wrapf(position.x, 32, 524)
+	position.x = wrapf(position.x, 32, 1100)
 	
 
 

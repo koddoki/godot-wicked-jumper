@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpojlr0wkqtne"]
+
+[ext_resource type="PackedScene" uid="uid://bxvem3k70ecnc" path="res://scenes/platform/grass_platform/grass_platform.tscn" id="1_30632"]
+[ext_resource type="PackedScene" uid="uid://ch427p6dss2lm" path="res://scenes/player/player.tscn" id="2_cpwpp"]
+
+[node name="TestingScene" type="Node2D"]
+position = Vector2(-1, 0)
+
+[node name="Floor" type="Node" parent="."]
+
+[node name="GrassPlatform1" parent="Floor" instance=ExtResource("1_30632")]
+position = Vector2(50, 571)
+scale = Vector2(5, 5)
+
+[node name="GrassPlatform2" parent="Floor" instance=ExtResource("1_30632")]
+position = Vector2(411, 571)
+scale = Vector2(5, 5)
+
+[node name="GrassPlatform3" parent="Floor" instance=ExtResource("1_30632")]
+position = Vector2(771, 571)
+scale = Vector2(5, 5)
+
+[node name="GrassPlatform4" parent="Floor" instance=ExtResource("1_30632")]
+position = Vector2(1123, 571)
+scale = Vector2(5, 5)
+
+[node name="Players" type="Node" parent="."]
+
+[node name="Player" parent="Players" instance=ExtResource("2_cpwpp")]
+position = Vector2(247, 279)
+
+[node name="Player2" parent="Players" instance=ExtResource("2_cpwpp")]
+position = Vector2(1134, 290)
+active_player = "player2"

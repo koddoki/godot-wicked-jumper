@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d1wflqqq55m7h" path="res://assets/Tiles/tile_0003.png" id="3_k5gr2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nysnj"]
-size = Vector2(66, 32)
+size = Vector2(72, 32)
 
 [node name="GrassPlatform1" type="StaticBody2D"]
 
