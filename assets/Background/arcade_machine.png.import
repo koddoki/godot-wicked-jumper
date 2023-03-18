@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgi02ypk7srs3"
-path="res://.godot/imported/slide2.jpg-96e1373507d28f6e2fd5b23e8d3dca6d.ctex"
+uid="uid://cgh4h4hvafche"
+path="res://.godot/imported/arcade_machine.png-e6553c1423b86e82bff57d206b0d7d20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/slides/slide2.jpg"
-dest_files=["res://.godot/imported/slide2.jpg-96e1373507d28f6e2fd5b23e8d3dca6d.ctex"]
+source_file="res://assets/Background/arcade_machine.png"
+dest_files=["res://.godot/imported/arcade_machine.png-e6553c1423b86e82bff57d206b0d7d20.ctex"]
 
 [params]
 
