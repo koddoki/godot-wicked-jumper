@@ -10,11 +10,12 @@ const SPEED = 5;
 var direction;
 
 func movement(delta):
-	print (active_player)
 	velocity.y += GRAVITY * delta;
-	var collision = move_and_collide(velocity);
+	
 	direction = int(Input.get_axis(active_player+"_left", active_player+"_right"));
 	velocity.x = lerp(int(velocity.x), direction * SPEED, 0.4)
+	
+	var collision = move_and_slide(velocity);
 	
 	if collision:
 		velocity.y = -JUMP_FORCE;
@@ -43,4 +44,4 @@ func _physics_process(delta):
 	movement(delta);
 	animation_state();
 	animation_direction();
-	teleport();
+	#teleport();
