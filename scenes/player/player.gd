@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-const GRAVITY = 15;
-const JUMP_FORCE = 10;
-const SPEED = 5;
+const GRAVITY = 5;
+const JUMP_FORCE = 350;
+const SPEED = 150;
 
 @export_enum("player1","player2") var active_player = "player1"
 
@@ -10,15 +10,17 @@ const SPEED = 5;
 var direction;
 
 func movement(delta):
-	velocity.y += GRAVITY * delta;
+	var collision = move_and_slide();
 	
 	direction = int(Input.get_axis(active_player+"_left", active_player+"_right"));
 	velocity.x = lerp(int(velocity.x), direction * SPEED, 0.4)
 	
-	var collision = move_and_slide(velocity);
+	velocity.y += GRAVITY;
 	
-	if collision:
+	if collision and is_on_floor():
 		velocity.y = -JUMP_FORCE;
+	if is_on_ceiling():
+		velocity.y = 0
 
 
 func teleport():
