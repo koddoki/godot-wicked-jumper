@@ -61,6 +61,11 @@ player2_down={
 ]
 }
 
+[layer_names]
+
+2d_render/layer_5="killzone"
+2d_physics/layer_5="killzone"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

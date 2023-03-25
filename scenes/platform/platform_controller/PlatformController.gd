@@ -13,6 +13,6 @@ func level_generator(amount):
 		
 
 func _ready():
-	level_generator(0)
+	level_generator(150)
 
 

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const GRAVITY = 15;
+const GRAVITY = 20;
 const JUMP_FORCE = 10;
 const SPEED = 5;
 
@@ -8,15 +8,17 @@ const SPEED = 5;
 
 
 var direction;
+var alive = true
 
 func movement(delta):
-	velocity.y += GRAVITY * delta;
-	direction = int(Input.get_axis(active_player+"_left", active_player+"_right"));
-	velocity.x = lerp(int(velocity.x), direction * SPEED, 0.4)
-	
-	var collision = move_and_collide(velocity);
-	if collision:
-		velocity.y = -JUMP_FORCE;
+	if alive == true:
+		velocity.y += GRAVITY * delta;
+		direction = int(Input.get_axis(active_player+"_left", active_player+"_right"));
+		velocity.x = lerp(int(velocity.x), direction * SPEED, 0.4)
+		
+		var collision = move_and_collide(velocity);
+		if collision:
+			velocity.y = -JUMP_FORCE;
 
 
 func teleport():
@@ -38,8 +40,18 @@ func animation_direction():
 		$PlayerAnimatedSprite.flip_h = false; 
 
 
+
 func _physics_process(delta):
 	movement(delta);
 	animation_state();
 	animation_direction();
 	teleport();
+
+func killzone_entered():
+	print(active_player+" foi de base!")
+	alive = false
+#	Isso é placeholder ok
+
+
+func _on_tree_exited():
+	print(active_player+" foi de base!")

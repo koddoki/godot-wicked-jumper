@@ -27,13 +27,15 @@ animations = [{
 size = Vector2(34, 36)
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 17
 script = ExtResource("1_17tmj")
 
 [node name="PlayerAnimatedSprite" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_uicp7")
 animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_mghnx")
+
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpojlr0wkqtne"]
+[gd_scene load_steps=10 format=3 uid="uid://dpojlr0wkqtne"]
 
 [ext_resource type="PackedScene" uid="uid://bxvem3k70ecnc" path="res://scenes/platform/grass_platform/grass_platform.tscn" id="1_30632"]
 [ext_resource type="Texture2D" uid="uid://cgh4h4hvafche" path="res://assets/Background/arcade_machine.png" id="1_gwkqf"]
 [ext_resource type="PackedScene" uid="uid://ch427p6dss2lm" path="res://scenes/player/player.tscn" id="2_cpwpp"]
+[ext_resource type="Script" path="res://scenes/testing_scene/Game.gd" id="3_cj8qp"]
+[ext_resource type="Script" path="res://scenes/testing_scene/DinamicCamera2D.gd" id="4_eiwh8"]
 [ext_resource type="PackedScene" uid="uid://urcj5e6y21u7" path="res://scenes/platform/platform_controller/PlatformController.tscn" id="4_px7jf"]
+[ext_resource type="Script" path="res://scenes/testing_scene/Players.gd" id="6_q76qi"]
+[ext_resource type="Script" path="res://scenes/testing_scene/Killzone.gd" id="7_7ysq4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_255p1"]
+size = Vector2(865, 45)
 
 [node name="TestingScene" type="Node2D"]
 position = Vector2(-1, 0)
@@ -21,30 +28,60 @@ metadata/_edit_lock_ = true
 [node name="Floor" type="Node" parent="."]
 
 [node name="GrassPlatform1" parent="Floor" instance=ExtResource("1_30632")]
-position = Vector2(358, 465)
+position = Vector2(339, 465)
 
 [node name="GrassPlatform2" parent="Floor" instance=ExtResource("1_30632")]
-position = Vector2(430, 465)
+position = Vector2(375, 465)
 
 [node name="GrassPlatform3" parent="Floor" instance=ExtResource("1_30632")]
-position = Vector2(502, 465)
+position = Vector2(411, 465)
 
 [node name="GrassPlatform4" parent="Floor" instance=ExtResource("1_30632")]
-position = Vector2(574, 465)
+position = Vector2(447, 465)
 
 [node name="GrassPlatform5" parent="Floor" instance=ExtResource("1_30632")]
-position = Vector2(646, 465)
+position = Vector2(483, 465)
 
 [node name="GrassPlatform6" parent="Floor" instance=ExtResource("1_30632")]
-position = Vector2(717, 465)
+position = Vector2(519, 465)
 
 [node name="GrassPlatform7" parent="Floor" instance=ExtResource("1_30632")]
-position = Vector2(789, 465)
+position = Vector2(555, 465)
+
+[node name="GrassPlatform8" parent="Floor" instance=ExtResource("1_30632")]
+position = Vector2(591, 465)
+
+[node name="GrassPlatform9" parent="Floor" instance=ExtResource("1_30632")]
+position = Vector2(627, 465)
+
+[node name="GrassPlatform10" parent="Floor" instance=ExtResource("1_30632")]
+position = Vector2(663, 465)
+
+[node name="GrassPlatform11" parent="Floor" instance=ExtResource("1_30632")]
+position = Vector2(699, 465)
+
+[node name="GrassPlatform12" parent="Floor" instance=ExtResource("1_30632")]
+position = Vector2(735, 465)
+
+[node name="GrassPlatform13" parent="Floor" instance=ExtResource("1_30632")]
+position = Vector2(771, 465)
+
+[node name="GrassPlatform14" parent="Floor" instance=ExtResource("1_30632")]
+position = Vector2(807, 465)
 
 [node name="Game" type="Node2D" parent="."]
 position = Vector2(336, 80)
-metadata/_edit_group_ = true
+script = ExtResource("3_cj8qp")
 metadata/_edit_lock_ = true
+
+[node name="DynamicCamera2D" type="Camera2D" parent="Game"]
+anchor_mode = 0
+limit_left = 0
+limit_right = 1152
+limit_bottom = 648
+limit_smoothed = true
+position_smoothing_enabled = true
+script = ExtResource("4_eiwh8")
 
 [node name="AreaDaBrincadeirinha" type="ColorRect" parent="Game"]
 offset_left = -2.0
@@ -54,17 +91,29 @@ color = Color(0.470588, 0.258824, 0.419608, 1)
 metadata/_edit_lock_ = true
 
 [node name="PlatformController" parent="Game" instance=ExtResource("4_px7jf")]
+metadata/_edit_lock_ = true
 
 [node name="Players" type="Node2D" parent="Game"]
+script = ExtResource("6_q76qi")
+metadata/_edit_lock_ = true
 
-[node name="Player" parent="Game/Players" instance=ExtResource("2_cpwpp")]
-position = Vector2(79, 319)
-
-[node name="Camera2D" type="Camera2D" parent="Game/Players/Player"]
-limit_left = 0
-limit_right = 1152
-limit_bottom = 648
+[node name="Player1" parent="Game/Players" instance=ExtResource("2_cpwpp")]
+position = Vector2(94, 274)
 
 [node name="Player2" parent="Game/Players" instance=ExtResource("2_cpwpp")]
-position = Vector2(326, 284)
+position = Vector2(375, 297)
 active_player = "player2"
+
+[node name="MaxHeight" type="Marker2D" parent="Game"]
+metadata/_edit_lock_ = true
+
+[node name="Killzone" type="Area2D" parent="Game/MaxHeight"]
+position = Vector2(0, 1)
+script = ExtResource("7_7ysq4")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/MaxHeight/Killzone"]
+position = Vector2(272, 503)
+shape = SubResource("RectangleShape2D_255p1")
+
+[connection signal="body_entered" from="Game/MaxHeight/Killzone" to="Game/MaxHeight/Killzone" method="_on_body_entered"]
