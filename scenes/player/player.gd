@@ -6,9 +6,20 @@ const SPEED = 5;
 
 @export_enum("player1","player2") var active_player = "player1"
 
+@onready var green_player = preload("res://scenes/player/animations/green_player.tres")
+@onready var blue_player = preload("res://scenes/player/animations/blue_player.tres")
 
+
+func _ready():
+	if active_player == "player1":
+		$PlayerAnimatedSprite.sprite_frames = green_player
+	else :
+		$PlayerAnimatedSprite.sprite_frames = blue_player
+	
 var direction;
 var alive = true
+
+
 
 func movement(delta):
 	if alive == true:

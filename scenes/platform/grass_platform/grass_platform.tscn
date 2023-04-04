@@ -5,17 +5,19 @@
 [ext_resource type="Texture2D" uid="uid://d1wflqqq55m7h" path="res://assets/Tiles/tile_0003.png" id="3_k5gr2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nysnj"]
-size = Vector2(36, 18)
+size = Vector2(70, 34)
 
 [node name="GrassPlatform1" type="StaticBody2D"]
 script = ExtResource("1_70lwa")
 
 [node name="Tile0001" type="Sprite2D" parent="."]
-position = Vector2(-9, 0)
+position = Vector2(-18, 0)
+scale = Vector2(2, 2)
 texture = ExtResource("1_w6wji")
 
 [node name="Tile0002" type="Sprite2D" parent="."]
-position = Vector2(9, 0)
+position = Vector2(17, 0)
+scale = Vector2(2, 2)
 texture = ExtResource("3_k5gr2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

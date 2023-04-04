@@ -1,37 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://ch427p6dss2lm"]
+[gd_scene load_steps=4 format=3 uid="uid://ch427p6dss2lm"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_17tmj"]
-[ext_resource type="Texture2D" uid="uid://c6bfoljag1w5" path="res://assets/Characters/character_0004.png" id="1_p7ip0"]
-[ext_resource type="Texture2D" uid="uid://ep0d43tq6qyf" path="res://assets/Characters/character_0005.png" id="3_uhs08"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_uicp7"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_uhs08")
-}],
-"loop": true,
-"name": &"fall",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_p7ip0")
-}],
-"loop": true,
-"name": &"jump",
-"speed": 5.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://b60gxhejd4hl3" path="res://scenes/player/animations/green_player.tres" id="2_npiy6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mghnx"]
-size = Vector2(34, 36)
+size = Vector2(40, 40)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 17
 script = ExtResource("1_17tmj")
 
 [node name="PlayerAnimatedSprite" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_uicp7")
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("2_npiy6")
 animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

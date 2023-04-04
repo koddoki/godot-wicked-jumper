@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bp6dggw01itov"]
+[gd_scene load_steps=12 format=3 uid="uid://bp6dggw01itov"]
 
 [ext_resource type="Script" path="res://scenes/multiplayer_menu/multiplayer_menu.gd" id="1_s15eo"]
 [ext_resource type="Texture2D" uid="uid://eduyjhjw776s" path="res://assets/ui/white_arrows/arrowLeft.png" id="2_ggfu3"]
@@ -6,7 +6,37 @@
 [ext_resource type="FontFile" uid="uid://ehad7l3e4y2d" path="res://assets/fonts/Kenney Pixel.ttf" id="4_m52ta"]
 [ext_resource type="Texture2D" uid="uid://by0ss5f7r057" path="res://assets/Characters/character_0000.png" id="5_kbvse"]
 [ext_resource type="Texture2D" uid="uid://bjika8ykcbe41" path="res://assets/Characters/character_0002.png" id="6_b5lxa"]
+[ext_resource type="Texture2D" uid="uid://bb6lyc30csvqb" path="res://assets/Characters/character_0001.png" id="6_o6akh"]
 [ext_resource type="FontFile" uid="uid://7y1bjo8b42xe" path="res://assets/fonts/Kenney Pixel Square.ttf" id="7_fywaa"]
+[ext_resource type="Texture2D" uid="uid://b5fdpik3pkuuf" path="res://assets/Characters/character_0003.png" id="8_wgtex"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8jr0l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_kbvse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_o6akh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pgbby"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_b5lxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wgtex")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="MultiplayerMenu" type="Control"]
 layout_mode = 3
@@ -19,20 +49,17 @@ script = ExtResource("1_s15eo")
 metadata/_edit_lock_ = true
 
 [node name="ArrowLeft" type="Sprite2D" parent="."]
+modulate = Color(0.654902, 0.654902, 0.654902, 1)
 position = Vector2(75, 447)
 texture = ExtResource("2_ggfu3")
 
 [node name="ArrowRight" type="Sprite2D" parent="."]
+modulate = Color(0.654902, 0.654902, 0.654902, 1)
 position = Vector2(239, 449)
 texture = ExtResource("3_lqj8f")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Choose your "
-
 [node name="LogoJumpy" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 48.0
 offset_top = 31.0
 offset_right = 1048.0
@@ -43,25 +70,30 @@ theme_override_font_sizes/normal_font_size = 128
 bbcode_enabled = true
 text = "[center][shake rate=3 level=10][tornado freq=5 radius=5]Escolha seu boneco"
 
-[node name="Character0000" type="Sprite2D" parent="."]
+[node name="Character0000" type="AnimatedSprite2D" parent="."]
 position = Vector2(160, 333)
 scale = Vector2(5.41667, 5.41667)
-texture = ExtResource("5_kbvse")
+sprite_frames = SubResource("SpriteFrames_8jr0l")
+frame_progress = 0.705203
 
 [node name="ArrowLeft2" type="Sprite2D" parent="."]
+modulate = Color(0.654902, 0.654902, 0.654902, 1)
 position = Vector2(867, 429)
 texture = ExtResource("2_ggfu3")
 
 [node name="ArrowRight2" type="Sprite2D" parent="."]
+modulate = Color(0.654902, 0.654902, 0.654902, 1)
 position = Vector2(1031, 431)
 texture = ExtResource("3_lqj8f")
 
-[node name="Character0001" type="Sprite2D" parent="."]
+[node name="Character0001" type="AnimatedSprite2D" parent="."]
 position = Vector2(952, 315)
 scale = Vector2(5.41667, 5.41667)
-texture = ExtResource("6_b5lxa")
+sprite_frames = SubResource("SpriteFrames_pgbby")
+frame_progress = 0.797305
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = -79.0
 offset_top = 517.0
 offset_right = 409.0
@@ -75,6 +107,7 @@ bbcode_enabled = true
 text = "[center][wave amp=25 freq=5]Jogador 1"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 695.0
 offset_top = 490.0
 offset_right = 1183.0
