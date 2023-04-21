@@ -1,0 +1,70 @@
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://dleteu0iovyi0"]
+
+[ext_resource type="Texture2D" uid="uid://bjika8ykcbe41" path="res://assets/Characters/character_0002.png" id="1_o0kna"]
+[ext_resource type="Texture2D" uid="uid://b5fdpik3pkuuf" path="res://assets/Characters/character_0003.png" id="2_7btre"]
+[ext_resource type="Texture2D" uid="uid://by0ss5f7r057" path="res://assets/Characters/character_0000.png" id="3_x0saa"]
+[ext_resource type="Texture2D" uid="uid://bb6lyc30csvqb" path="res://assets/Characters/character_0001.png" id="4_qk53o"]
+[ext_resource type="Texture2D" uid="uid://cdcwlxw2nagrs" path="res://assets/Characters/character_0006.png" id="5_tg58v"]
+[ext_resource type="Texture2D" uid="uid://cuf64vehpg8qv" path="res://assets/Characters/character_0007.png" id="6_umaog"]
+[ext_resource type="Texture2D" uid="uid://c6bfoljag1w5" path="res://assets/Characters/character_0004.png" id="7_7naqi"]
+[ext_resource type="Texture2D" uid="uid://ep0d43tq6qyf" path="res://assets/Characters/character_0005.png" id="8_pgxdy"]
+[ext_resource type="Texture2D" uid="uid://dqs7d0pvx502i" path="res://assets/Characters/character_0009.png" id="9_g27ui"]
+[ext_resource type="Texture2D" uid="uid://cjba0ypkub2gh" path="res://assets/Characters/character_0010.png" id="10_qixde"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o0kna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7btre")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x0saa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qk53o")
+}],
+"loop": true,
+"name": &"green",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_tg58v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_umaog")
+}],
+"loop": true,
+"name": &"orange",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_7naqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pgxdy")
+}],
+"loop": true,
+"name": &"pink",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_g27ui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qixde")
+}],
+"loop": true,
+"name": &"yellow",
+"speed": 2.0
+}]
