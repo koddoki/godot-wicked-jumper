@@ -14,11 +14,10 @@ grow_vertical = 2
 script = ExtResource("1_s15eo")
 metadata/_edit_lock_ = true
 
-[node name="LogoJumpy" type="RichTextLabel" parent="."]
+[node name="ChooseYourCharacterRichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 48.0
 offset_top = 31.0
-offset_right = 1048.0
+offset_right = 1152.0
 offset_bottom = 133.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_m52ta")
@@ -26,14 +25,19 @@ theme_override_font_sizes/normal_font_size = 128
 bbcode_enabled = true
 text = "[center][shake rate=3 level=10][tornado freq=5 radius=5]Escolha seu boneco"
 
-[node name="CharacterPicker" parent="." instance=ExtResource("3_ghxu6")]
-offset_left = 731.0
-offset_top = 362.0
-offset_right = 988.0
-offset_bottom = 679.0
+[node name="CharacterPickers" type="Node2D" parent="."]
 
-[node name="CharacterPicker2" parent="." instance=ExtResource("3_ghxu6")]
-offset_left = 101.0
-offset_top = 367.0
-offset_right = 358.0
-offset_bottom = 684.0
+[node name="CharacterPicker1" parent="CharacterPickers" instance=ExtResource("3_ghxu6")]
+offset_left = 16.0
+offset_top = 160.0
+offset_right = 16.0
+offset_bottom = 160.0
+metadata/_edit_lock_ = true
+
+[node name="CharacterPicker2" parent="CharacterPickers" instance=ExtResource("3_ghxu6")]
+offset_left = 576.0
+offset_top = 160.0
+offset_right = 576.0
+offset_bottom = 160.0
+active_player = "player2"
+metadata/_edit_lock_ = true

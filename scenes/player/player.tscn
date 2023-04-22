@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ch427p6dss2lm"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_17tmj"]
-[ext_resource type="SpriteFrames" uid="uid://b60gxhejd4hl3" path="res://scenes/player/animations/green_player.tres" id="2_npiy6"]
+[ext_resource type="SpriteFrames" uid="uid://cmit307a8enrj" path="res://scenes/player/animations/player_animations.tres" id="2_p11ek"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mghnx"]
 size = Vector2(40, 40)
@@ -12,8 +12,8 @@ script = ExtResource("1_17tmj")
 
 [node name="PlayerAnimatedSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
-sprite_frames = ExtResource("2_npiy6")
-animation = &"jump"
+sprite_frames = ExtResource("2_p11ek")
+animation = &"green_fall"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)

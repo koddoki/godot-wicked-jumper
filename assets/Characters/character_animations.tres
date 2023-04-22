@@ -48,6 +48,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("9_g27ui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qixde")
+}],
+"loop": true,
+"name": &"peach",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("7_7naqi")
 }, {
 "duration": 1.0,
@@ -56,15 +67,4 @@ animations = [{
 "loop": true,
 "name": &"pink",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_g27ui")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_qixde")
-}],
-"loop": true,
-"name": &"yellow",
-"speed": 2.0
 }]

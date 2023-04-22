@@ -18,7 +18,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-207, -94)]
+"values": [Vector2(-167, -38)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -66,7 +66,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(433, -94)]
+"values": [Vector2(393, -38)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -142,6 +142,54 @@ tracks/10/keys = {
 "method": &"update_caroussel_sprites"
 }]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Carroussel/ArrowRight:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Carroussel/ArrowLeft:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Carroussel/ArrowLeft:scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.98, 0.98)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Carroussel/ArrowRight:scale")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.98, 0.98)]
+}
 
 [sub_resource type="Animation" id="Animation_2y7vl"]
 resource_name = "next_sprite"
@@ -155,7 +203,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-207, -94)]
+"values": [Vector2(-167, -38)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -167,7 +215,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-47, -134), Vector2(-207, -94)]
+"values": [Vector2(-47, -134), Vector2(-167, -38)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -203,7 +251,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(433, -94), Vector2(273, -134)]
+"values": [Vector2(393, -38), Vector2(273, -134)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -279,6 +327,54 @@ tracks/10/keys = {
 "method": &"next_sprite"
 }]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Carroussel/ArrowLeft:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.98, 0.98)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Carroussel/ArrowLeft:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Carroussel/ArrowRight:scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.98, 0.98), Vector2(0.75, 0.75), Vector2(0.98, 0.98)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Carroussel/ArrowRight:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.466667, 0.466667, 0.466667, 1), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_3nf03"]
 resource_name = "previous_sprite"
@@ -292,7 +388,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-207, -94), Vector2(-47, -134)]
+"values": [Vector2(-167, -38), Vector2(-47, -134)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -328,7 +424,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(273, -134), Vector2(433, -94)]
+"values": [Vector2(273, -134), Vector2(393, -38)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -340,7 +436,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(433, -94)]
+"values": [Vector2(393, -38)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -416,6 +512,54 @@ tracks/10/keys = {
 "method": &"previous_sprite"
 }]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Carroussel/ArrowLeft:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.466667, 0.466667, 0.466667, 1), Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Carroussel/ArrowLeft:scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.98, 0.98), Vector2(0.75, 0.75), Vector2(0.98, 0.98)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Carroussel/ArrowRight:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Carroussel/ArrowRight:scale")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.98, 0.98)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nx4xm"]
 _data = {
@@ -427,36 +571,33 @@ _data = {
 [node name="CharacterPicker" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 111.0
-offset_top = 222.0
-offset_right = 368.0
-offset_bottom = 539.0
 script = ExtResource("1_amhd6")
-metadata/_edit_lock_ = true
 
-[node name="ArrowLeft" type="Sprite2D" parent="."]
-modulate = Color(0.654902, 0.654902, 0.654902, 1)
-position = Vector2(25, 26)
-texture = ExtResource("1_kksr7")
-
-[node name="ArrowRight" type="Sprite2D" parent="."]
-modulate = Color(0.654902, 0.654902, 0.654902, 1)
-position = Vector2(201, 26)
-texture = ExtResource("2_1utuv")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="PlaceholderArea" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = -4.0
-offset_top = 244.0
-offset_right = 279.0
-offset_bottom = 300.0
+offset_right = 560.0
+offset_bottom = 320.0
+color = Color(0.137255, 0.352941, 0.356863, 1)
+
+[node name="PlayerRichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.0
+anchor_right = -2.0
+offset_top = 208.0
+offset_right = 560.0
+offset_bottom = 264.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
 mouse_filter = 2
 theme_override_colors/default_color = Color(0.94902, 0.94902, 0.94902, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("5_c8kmd")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "[center][wave amp=25 freq=5]Jogador 1"
+text = "[center][wave amp=25 freq=5]Jogador 1 "
+scroll_active = false
+shortcut_keys_enabled = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -464,28 +605,38 @@ libraries = {
 }
 
 [node name="Carroussel" type="Node2D" parent="."]
-position = Vector2(25, 66)
-metadata/_edit_group_ = true
+position = Vector2(167, 225)
+
+[node name="ArrowLeft" type="Sprite2D" parent="Carroussel"]
+position = Vector2(25, -39)
+scale = Vector2(0.98, 0.98)
+texture = ExtResource("1_kksr7")
+
+[node name="ArrowRight" type="Sprite2D" parent="Carroussel"]
+position = Vector2(194, -39)
+scale = Vector2(0.98, 0.98)
+texture = ExtResource("2_1utuv")
 
 [node name="Character-2" type="AnimatedSprite2D" parent="Carroussel"]
-position = Vector2(-207, -94)
+position = Vector2(-167, -38)
 scale = Vector2(1e-05, 1e-05)
 sprite_frames = ExtResource("5_brscf")
-animation = &"blue"
+animation = &"peach"
 metadata/_edit_lock_ = true
 
 [node name="Character-1" type="AnimatedSprite2D" parent="Carroussel"]
 position = Vector2(-47, -134)
 scale = Vector2(4, 4)
 sprite_frames = ExtResource("5_brscf")
-animation = &"green"
+animation = &"peach"
+frame_progress = 0.860384
 metadata/_edit_lock_ = true
 
 [node name="Character0" type="AnimatedSprite2D" parent="Carroussel"]
 position = Vector2(113, -158)
 scale = Vector2(5.417, 5.417)
 sprite_frames = ExtResource("5_brscf")
-animation = &"orange"
+animation = &"green"
 metadata/_edit_lock_ = true
 
 [node name="Character1" type="AnimatedSprite2D" parent="Carroussel"]
@@ -496,8 +647,9 @@ animation = &"pink"
 metadata/_edit_lock_ = true
 
 [node name="Character2" type="AnimatedSprite2D" parent="Carroussel"]
-position = Vector2(433, -94)
+position = Vector2(393, -38)
 scale = Vector2(1e-05, 1e-05)
 sprite_frames = ExtResource("5_brscf")
-animation = &"yellow"
+animation = &"peach"
+frame_progress = 0.278806
 metadata/_edit_lock_ = true

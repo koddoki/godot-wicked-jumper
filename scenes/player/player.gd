@@ -5,20 +5,14 @@ const JUMP_FORCE = 10;
 const SPEED = 5;
 
 @export_enum("player1","player2") var active_player = "player1"
+@export_enum("blue", "orange", "green", "pink", "peach") var player_skin = "green"
 
-@onready var green_player = preload("res://scenes/player/animations/green_player.tres")
-@onready var blue_player = preload("res://scenes/player/animations/blue_player.tres")
-
-
-func _ready():
-	if active_player == "player1":
-		$PlayerAnimatedSprite.sprite_frames = green_player
-	else :
-		$PlayerAnimatedSprite.sprite_frames = blue_player
-	
 var direction;
 var alive = true
 
+
+func _ready():
+	pass
 
 
 func movement(delta):
@@ -39,9 +33,9 @@ func teleport():
 
 func animation_state():
 	if velocity.y > 0:
-		$PlayerAnimatedSprite.play("fall");
+		$PlayerAnimatedSprite.play(player_skin+"fall");
 		return;
-	$PlayerAnimatedSprite.play("jump");
+	$PlayerAnimatedSprite.play(player_skin+"jump");
 
 
 func animation_direction():
@@ -49,7 +43,6 @@ func animation_direction():
 		$PlayerAnimatedSprite.flip_h = true;
 	if direction == -1:
 		$PlayerAnimatedSprite.flip_h = false; 
-
 
 
 func _physics_process(delta):

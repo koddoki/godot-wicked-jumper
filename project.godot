@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Jumpy Jumper"
+config/name="Wicked Jumper"
 run/main_scene="res://scenes/temporary_main/temporary_main.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://assets/logo/logo.png"
