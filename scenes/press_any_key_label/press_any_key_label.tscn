@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cg2vtmyfal81f"]
+
+[ext_resource type="FontFile" uid="uid://7y1bjo8b42xe" path="res://assets/fonts/Kenney Pixel Square.ttf" id="1_frckc"]
+
+[node name="PressAnyKeyLabel" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+clip_contents = false
+custom_minimum_size = Vector2(0, 30)
+offset_left = -117.0
+offset_right = 117.0
+offset_bottom = 60.0
+size_flags_horizontal = 4
+theme_override_fonts/normal_font = ExtResource("1_frckc")
+bbcode_enabled = true
+text = "[center][wave amp=25 freq=5]Pressione qualquer
+tecla para começar"

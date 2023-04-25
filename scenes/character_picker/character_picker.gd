@@ -1,4 +1,4 @@
-extends Control
+extends PanelContainer
 
 @export_enum("player1","player2", "solo") var active_player = "player1"
 
@@ -8,10 +8,10 @@ var active_skin
 
 func _ready():
 	if active_player == "solo":
-		$PlayerRichTextLabel.queue_free()
+		$Carroussel/PlayerRichTextLabel.queue_free()
 	elif active_player == "player2":
 		skins = ["blue", "green", "orange", "pink", "peach"]
-		$PlayerRichTextLabel.text = "[center][wave amp=25 freq=5]Jogador 2"
+		$Carroussel/PlayerRichTextLabel.text = "[center][wave amp=25 freq=5]Jogador 2"
 	update_caroussel_sprites()
 	active_skin = skins[2]
 

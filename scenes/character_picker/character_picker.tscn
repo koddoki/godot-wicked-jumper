@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://bw4puwj8twckm"]
+[gd_scene load_steps=11 format=3 uid="uid://bw4puwj8twckm"]
 
 [ext_resource type="Script" path="res://scenes/character_picker/character_picker.gd" id="1_amhd6"]
 [ext_resource type="Texture2D" uid="uid://eduyjhjw776s" path="res://assets/ui/white_arrows/arrowLeft.png" id="1_kksr7"]
 [ext_resource type="Texture2D" uid="uid://ckq4klthxiqou" path="res://assets/ui/white_arrows/arrowRight.png" id="2_1utuv"]
 [ext_resource type="SpriteFrames" uid="uid://dleteu0iovyi0" path="res://assets/Characters/character_animations.tres" id="5_brscf"]
 [ext_resource type="FontFile" uid="uid://7y1bjo8b42xe" path="res://assets/fonts/Kenney Pixel Square.ttf" id="5_c8kmd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xtttq"]
 
 [sub_resource type="Animation" id="Animation_qh2p7"]
 length = 0.001
@@ -568,25 +570,30 @@ _data = {
 "previous_sprite": SubResource("Animation_3nf03")
 }
 
-[node name="CharacterPicker" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-script = ExtResource("1_amhd6")
-
-[node name="PlaceholderArea" type="ColorRect" parent="."]
-layout_mode = 0
+[node name="CharacterPicker" type="PanelContainer"]
 offset_right = 560.0
 offset_bottom = 320.0
-color = Color(0.137255, 0.352941, 0.356863, 1)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xtttq")
+script = ExtResource("1_amhd6")
 
-[node name="PlayerRichTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 1
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nx4xm")
+}
+
+[node name="Carroussel" type="Node2D" parent="."]
+position = Vector2(167, 225)
+
+[node name="PlayerRichTextLabel" type="RichTextLabel" parent="Carroussel"]
 anchors_preset = -1
 anchor_left = -2.0
 anchor_right = -2.0
-offset_top = 208.0
-offset_right = 560.0
-offset_bottom = 264.0
+offset_left = -167.0
+offset_top = 6.0
+offset_right = 393.0
+offset_bottom = 62.0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 mouse_filter = 2
@@ -598,14 +605,6 @@ bbcode_enabled = true
 text = "[center][wave amp=25 freq=5]Jogador 1 "
 scroll_active = false
 shortcut_keys_enabled = false
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_nx4xm")
-}
-
-[node name="Carroussel" type="Node2D" parent="."]
-position = Vector2(167, 225)
 
 [node name="ArrowLeft" type="Sprite2D" parent="Carroussel"]
 position = Vector2(25, -39)

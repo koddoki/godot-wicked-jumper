@@ -12,13 +12,31 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_s15eo")
-metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.662745, 0.376471, 0.505882, 1)
+
+[node name="ReturnButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 57.0
+offset_right = 105.0
+offset_bottom = 113.0
+text = "Voltar"
 
 [node name="ChooseYourCharacterRichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_top = 31.0
 offset_right = 1152.0
 offset_bottom = 133.0
+mouse_filter = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_m52ta")
 theme_override_font_sizes/normal_font_size = 128
@@ -26,18 +44,22 @@ bbcode_enabled = true
 text = "[center][shake rate=3 level=10][tornado freq=5 radius=5]Escolha seu boneco"
 
 [node name="CharacterPickers" type="Node2D" parent="."]
+metadata/_edit_group_ = true
 
 [node name="CharacterPicker1" parent="CharacterPickers" instance=ExtResource("3_ghxu6")]
 offset_left = 16.0
-offset_top = 160.0
+offset_top = 176.0
 offset_right = 16.0
-offset_bottom = 160.0
-metadata/_edit_lock_ = true
+offset_bottom = 176.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="CharacterPicker2" parent="CharacterPickers" instance=ExtResource("3_ghxu6")]
 offset_left = 576.0
-offset_top = 160.0
+offset_top = 176.0
 offset_right = 576.0
-offset_bottom = 160.0
+offset_bottom = 176.0
+size_flags_vertical = 4
 active_player = "player2"
-metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
