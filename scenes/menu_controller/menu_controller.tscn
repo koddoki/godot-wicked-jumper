@@ -193,14 +193,12 @@ layout_mode = 1
 layout_mode = 1
 offset_left = 576.0
 offset_top = 324.0
-offset_right = 1728.0
-offset_bottom = 972.0
+offset_right = 576.0
+offset_bottom = 324.0
 scale = Vector2(1e-05, 1e-05)
 
 [node name="MultiplayerMenu" parent="." instance=ExtResource("3_pinit")]
 layout_mode = 1
-offset_right = 1152.0
-offset_bottom = 648.0
 scale = Vector2(1e-05, 1e-05)
 metadata/_edit_lock_ = true
 
