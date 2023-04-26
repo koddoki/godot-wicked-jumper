@@ -16,7 +16,7 @@ func _ready():
 	active_skin = skins[2]
 
 
-func _process(delta):
+func _process(_delta):
 	change_selected_sprite()
 
 

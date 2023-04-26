@@ -9,7 +9,7 @@ extends Node2D
 var is_match_going = true
 var keyboard_locked = true
 
-func _process(delta):
+func _process(_delta):
 	if player1.alive == false && is_match_going:
 		is_match_going = false
 		foi_de_base(player1.active_player)

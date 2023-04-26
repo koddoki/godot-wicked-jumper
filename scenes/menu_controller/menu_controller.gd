@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 
 signal close_game
 signal start_singleplayer_game(player_color:String)
@@ -34,11 +34,13 @@ func connect_multiplayer_menu_signals():
 func open_multiplayer_tab():
 	print("Clicou no multiplayer")
 	$AnimationPlayer.play("fade_in_multiplayer_menu")
+	$MultiplayerMenu.is_active = true
 
 
 func open_singleplayer_tab():
 	print("Clicou no singleplayer")
 	$AnimationPlayer.play("fade_in_singleplayer_menu")
+	$SinglePlayerMenu.is_active = true
 
 
 func close_singleplayer_tab():
