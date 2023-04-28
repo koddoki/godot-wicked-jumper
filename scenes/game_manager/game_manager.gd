@@ -17,6 +17,7 @@ func instantiate_main_menu():
 
 
 func start_single_player():
+	print("Chegou ate o final aeee")
 	var instance = singleplayer_level.instantiate()
 	add_child(instance)
 

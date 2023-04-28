@@ -59,7 +59,7 @@ func emit_start_singleplayer_game_signal(player_color:String):
 
 
 func emit_start_multiplayer_game_signal(player1_color:String, player2_color:String):
-	print("clicou pra iniciar um jogo multiplayer")
+	print("SinglePlayerMenu is emiting the signal 'close_singleplayer_tab'")
 	emit_signal("start_multiplayer_game", player1_color, player2_color)
 
 

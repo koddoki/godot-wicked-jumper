@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ch14e0fb16x0h"]
+[gd_scene load_steps=8 format=3 uid="uid://ch14e0fb16x0h"]
 
 [ext_resource type="Script" path="res://scenes/singleplayer_menu/single_player_menu.gd" id="1_71h8x"]
 [ext_resource type="FontFile" uid="uid://ehad7l3e4y2d" path="res://assets/fonts/Kenney Pixel.ttf" id="2_tso6d"]
 [ext_resource type="PackedScene" uid="uid://bw4puwj8twckm" path="res://scenes/character_picker/character_picker.tscn" id="3_o5khh"]
+[ext_resource type="PackedScene" uid="uid://okvlhjqa7mnx" path="res://scenes/game_start_timer/game_start_timer.tscn" id="4_0dmyj"]
 
 [sub_resource type="Animation" id="Animation_plf3x"]
 length = 0.001
@@ -83,7 +84,7 @@ theme_override_font_sizes/normal_font_size = 128
 bbcode_enabled = true
 text = "[center][shake rate=3 level=10][tornado freq=5 radius=5]Escolha seu boneco"
 
-[node name="CharacterPicker1" parent="." instance=ExtResource("3_o5khh")]
+[node name="CharacterPicker" parent="." instance=ExtResource("3_o5khh")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -97,6 +98,7 @@ offset_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
 active_player = "solo"
+metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -114,6 +116,8 @@ mouse_filter = 2
 color = Color(1, 1, 1, 0)
 metadata/_edit_lock_ = true
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="GameStartTimer" parent="." instance=ExtResource("4_0dmyj")]
+visible = false
+position = Vector2(576, 472)
 
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
