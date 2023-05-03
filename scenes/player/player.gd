@@ -4,12 +4,13 @@ const GRAVITY = 20;
 const JUMP_FORCE = 10;
 const SPEED = 5;
 
-@export_enum("player1","player2", "solo") var active_player = "player1"
+@export_enum("player1","player2", "solo") var active_player = "solo"
 #@export_enum("blue", "orange", "green", "pink", "peach") var player_skin: String = "green"
 
 var player_skin: String = "green"
 var direction;
 var alive = true
+signal player_died(which_player, player_color)
 
 
 func _ready():
@@ -62,6 +63,7 @@ func _physics_process(delta):
 func killzone_entered():
 	print(active_player+" foi de base!")
 	alive = false
+	player_died.emit(active_player, player_skin)
 #	Isso é placeholder ok
 
 

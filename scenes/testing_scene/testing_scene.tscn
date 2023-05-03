@@ -309,7 +309,6 @@ position = Vector2(94, 274)
 [node name="Player2" parent="Game/Players" instance=ExtResource("2_cpwpp")]
 position = Vector2(375, 297)
 active_player = "player2"
-player_skin = "pink"
 
 [node name="MaxHeight" type="Marker2D" parent="Game"]
 position = Vector2(0, 193)

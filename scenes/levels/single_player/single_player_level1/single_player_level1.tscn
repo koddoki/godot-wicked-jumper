@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://wg5j7r4d8loc"]
+[gd_scene load_steps=25 format=3 uid="uid://wg5j7r4d8loc"]
 
 [ext_resource type="Script" path="res://scenes/levels/single_player/single_player_level1/single_player_level1.gd" id="1_io7dj"]
 [ext_resource type="Texture2D" uid="uid://cgh4h4hvafche" path="res://assets/Background/arcade_machine.png" id="2_grelr"]
@@ -9,8 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://by0ss5f7r057" path="res://assets/Characters/character_0000.png" id="7_5romi"]
 [ext_resource type="Texture2D" uid="uid://bb6lyc30csvqb" path="res://assets/Characters/character_0001.png" id="8_kycjl"]
 [ext_resource type="PackedScene" uid="uid://bxvem3k70ecnc" path="res://scenes/platform/grass_platform/grass_platform.tscn" id="9_3en6u"]
+[ext_resource type="Texture2D" uid="uid://cdcwlxw2nagrs" path="res://assets/Characters/character_0006.png" id="9_nkvil"]
 [ext_resource type="Script" path="res://scenes/levels/single_player/single_player_class/SinglePlayerGame.gd" id="10_478kn"]
+[ext_resource type="Texture2D" uid="uid://cuf64vehpg8qv" path="res://assets/Characters/character_0007.png" id="10_q18bo"]
+[ext_resource type="Texture2D" uid="uid://dqs7d0pvx502i" path="res://assets/Characters/character_0009.png" id="11_p7dyg"]
+[ext_resource type="Texture2D" uid="uid://cjba0ypkub2gh" path="res://assets/Characters/character_0010.png" id="12_rx1ky"]
 [ext_resource type="PackedScene" uid="uid://urcj5e6y21u7" path="res://scenes/platform/platform_controller/PlatformController.tscn" id="12_u6x7o"]
+[ext_resource type="Texture2D" uid="uid://c6bfoljag1w5" path="res://assets/Characters/character_0004.png" id="13_rvix7"]
+[ext_resource type="Texture2D" uid="uid://ep0d43tq6qyf" path="res://assets/Characters/character_0005.png" id="14_dwkg6"]
 [ext_resource type="PackedScene" uid="uid://ch427p6dss2lm" path="res://scenes/player/player.tscn" id="14_sdhg2"]
 [ext_resource type="Script" path="res://scenes/testing_scene/Killzone.gd" id="15_kic1y"]
 
@@ -31,7 +37,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("JogadorVencedor:modulate")
+tracks/1/path = NodePath("GameOverLabel:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -43,7 +49,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("JogarNovamente:modulate")
+tracks/2/path = NodePath("PlayAgainLabel:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -59,6 +65,30 @@ tracks/3/path = NodePath("AnimatedSprite2D:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Points:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ChangeCharacterLabel:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -83,7 +113,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("JogadorVencedor:modulate")
+tracks/1/path = NodePath("GameOverLabel:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -95,7 +125,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("JogarNovamente:modulate")
+tracks/2/path = NodePath("PlayAgainLabel:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -130,6 +160,30 @@ tracks/4/keys = {
 "method": &"release_keyboard"
 }]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Points:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.8, 3.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ChangeCharacterLabel:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(3.9, 4.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_na4tr"]
 _data = {
@@ -160,6 +214,39 @@ animations = [{
 "loop": true,
 "name": &"victory_green",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_nkvil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_q18bo")
+}],
+"loop": true,
+"name": &"victory_orange",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_p7dyg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_rx1ky")
+}],
+"loop": true,
+"name": &"victory_peach",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_rvix7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_dwkg6")
+}],
+"loop": true,
+"name": &"victory_pink",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_255p1"]
@@ -189,25 +276,23 @@ libraries = {
 "": SubResource("AnimationLibrary_na4tr")
 }
 
-[node name="JogadorVencedor" type="RichTextLabel" parent="Ui"]
+[node name="GameOverLabel" type="RichTextLabel" parent="Ui"]
 modulate = Color(1, 1, 1, 0)
 offset_left = -1.0
-offset_top = 31.0
+offset_top = 24.0
 offset_right = 1154.0
-offset_bottom = 219.0
+offset_bottom = 128.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_dsygf")
 theme_override_font_sizes/normal_font_size = 128
 bbcode_enabled = true
-text = "[center][shake rate=3 level=10][tornado freq=5 radius=5]Jogador 1
-venceu!"
+text = "[center][shake rate=3 level=10][tornado freq=5 radius=5]Fim de jogo!"
 
-[node name="JogarNovamente" type="RichTextLabel" parent="Ui"]
+[node name="PlayAgainLabel" type="RichTextLabel" parent="Ui"]
 modulate = Color(1, 1, 1, 0)
-offset_left = -2.0
-offset_top = 446.0
-offset_right = 1148.0
-offset_bottom = 548.0
+offset_top = 415.0
+offset_right = 576.0
+offset_bottom = 517.0
 mouse_filter = 2
 theme_override_colors/default_color = Color(0.94902, 0.94902, 0.94902, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -215,15 +300,42 @@ theme_override_fonts/normal_font = ExtResource("4_k5nfp")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[center][wave amp=25 freq=5]Jogar
-novamente?"
+novamente?
+"
+
+[node name="ChangeCharacterLabel" type="RichTextLabel" parent="Ui"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 576.0
+offset_top = 415.0
+offset_right = 1152.0
+offset_bottom = 517.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.94902, 0.94902, 0.94902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_k5nfp")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center][wave amp=25 freq=5]Trocar de
+personagem?"
+
+[node name="Points" type="RichTextLabel" parent="Ui"]
+offset_left = -2.0
+offset_top = 152.0
+offset_right = 1153.0
+offset_bottom = 256.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_dsygf")
+theme_override_font_sizes/normal_font_size = 128
+bbcode_enabled = true
+text = "[center][shake rate=3 level=10][tornado freq=5 radius=5]0000"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ui"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(580, 325)
 scale = Vector2(5.5, 5.5)
 sprite_frames = SubResource("SpriteFrames_riqb7")
-animation = &"victory_blue"
-frame_progress = 0.801169
+animation = &"victory_pink"
+frame_progress = 0.335307
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Ui"]
 layer = -1
@@ -236,7 +348,9 @@ offset_bottom = 480.0
 color = Color(0.756863, 0.945098, 1, 1)
 metadata/_edit_lock_ = true
 
-[node name="Floor" type="Node" parent="."]
+[node name="Floor" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="GrassPlatform1" parent="Floor" instance=ExtResource("9_3en6u")]
 position = Vector2(339, 465)

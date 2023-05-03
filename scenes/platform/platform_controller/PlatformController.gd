@@ -13,4 +13,4 @@ func level_generator(amount):
 
 
 func _ready():
-	level_generator(30)
+	level_generator(3000)
