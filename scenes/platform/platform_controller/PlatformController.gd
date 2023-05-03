@@ -10,9 +10,7 @@ func level_generator(amount):
 		var new_platform = grass_platform_scene.instantiate() as StaticBody2D;
 		new_platform.position = Vector2(randi_range(20, 380), platform_initial_position_y);
 		add_child(new_platform);
-		
+
 
 func _ready():
-	level_generator(150)
-
-
+	level_generator(30)

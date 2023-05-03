@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var player = $Game/Players/Player
 @onready var player1 = $Game/Players/Player1
 @onready var player2 = $Game/Players/Player2
 @onready var ui_animated_sprite = $Ui/AnimatedSprite2D
@@ -8,6 +9,11 @@ extends Node2D
 
 var is_match_going = true
 var keyboard_locked = true
+
+func set_player_color(player_color):
+	print("o valor e: "+player_color)
+	player.player_skin = "green"
+
 
 func _process(_delta):
 	if player1.alive == false && is_match_going:

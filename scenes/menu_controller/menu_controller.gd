@@ -54,7 +54,7 @@ func close_multiplayer_tab():
 
 
 func emit_start_singleplayer_game_signal(player_color:String):
-	print("clicou pra iniciar um jogo singleplayer")
+	print("MenuController is emiting the signal 'start_singleplayer_game'")
 	emit_signal("start_singleplayer_game", player_color)
 
 

@@ -4,15 +4,24 @@ const GRAVITY = 20;
 const JUMP_FORCE = 10;
 const SPEED = 5;
 
-@export_enum("player1","player2") var active_player = "player1"
-@export_enum("blue", "orange", "green", "pink", "peach") var player_skin = "green"
+@export_enum("player1","player2", "solo") var active_player = "player1"
+#@export_enum("blue", "orange", "green", "pink", "peach") var player_skin: String = "green"
 
+var player_skin: String = "green"
 var direction;
 var alive = true
 
 
 func _ready():
 	pass
+
+
+func _init():
+	pass
+
+
+func set_player_skin(skin_color: String):
+	player_skin = skin_color
 
 
 func movement(delta):
@@ -28,14 +37,13 @@ func movement(delta):
 
 func teleport():
 	position.x = wrapf(position.x, -5, 485)
-	
 
 
 func animation_state():
 	if velocity.y > 0:
-		$PlayerAnimatedSprite.play(player_skin+"fall");
+		$PlayerAnimatedSprite.play(player_skin+"_fall");
 		return;
-	$PlayerAnimatedSprite.play(player_skin+"jump");
+	$PlayerAnimatedSprite.play(player_skin+"_jump");
 
 
 func animation_direction():
