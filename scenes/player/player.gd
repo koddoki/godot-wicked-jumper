@@ -7,7 +7,7 @@ const SPEED = 5;
 @export_enum("player1","player2", "solo") var active_player = "solo"
 #@export_enum("blue", "orange", "green", "pink", "peach") var player_skin: String = "green"
 
-var player_skin: String = "green"
+var player_skin: String = "blue"
 var direction;
 var alive = true
 signal player_died(which_player, player_color)

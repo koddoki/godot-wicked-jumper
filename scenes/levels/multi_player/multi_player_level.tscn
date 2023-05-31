@@ -1,0 +1,325 @@
+[gd_scene load_steps=21 format=3 uid="uid://83nka01miojl"]
+
+[ext_resource type="Script" path="res://scenes/levels/multi_player/multi_player_level.gd" id="1_h4p6u"]
+[ext_resource type="Texture2D" uid="uid://cgh4h4hvafche" path="res://assets/Background/arcade_machine.png" id="2_mhmy2"]
+[ext_resource type="FontFile" uid="uid://ehad7l3e4y2d" path="res://assets/fonts/Kenney Pixel.ttf" id="3_pould"]
+[ext_resource type="FontFile" uid="uid://7y1bjo8b42xe" path="res://assets/fonts/Kenney Pixel Square.ttf" id="4_qxj4k"]
+[ext_resource type="Texture2D" uid="uid://bjika8ykcbe41" path="res://assets/Characters/character_0002.png" id="5_i7pm7"]
+[ext_resource type="Texture2D" uid="uid://b5fdpik3pkuuf" path="res://assets/Characters/character_0003.png" id="6_pljx7"]
+[ext_resource type="Texture2D" uid="uid://by0ss5f7r057" path="res://assets/Characters/character_0000.png" id="7_8n3uf"]
+[ext_resource type="Texture2D" uid="uid://bb6lyc30csvqb" path="res://assets/Characters/character_0001.png" id="8_li1td"]
+[ext_resource type="PackedScene" uid="uid://bxvem3k70ecnc" path="res://scenes/platform/grass_platform/grass_platform.tscn" id="9_qayy2"]
+[ext_resource type="Script" path="res://scenes/testing_scene/Game.gd" id="10_eyjte"]
+[ext_resource type="Script" path="res://scenes/testing_scene/DinamicCamera2D.gd" id="11_60ked"]
+[ext_resource type="PackedScene" uid="uid://urcj5e6y21u7" path="res://scenes/platform/platform_controller/PlatformController.tscn" id="12_fgluc"]
+[ext_resource type="Script" path="res://scenes/testing_scene/Players.gd" id="13_u2qsq"]
+[ext_resource type="PackedScene" uid="uid://ch427p6dss2lm" path="res://scenes/player/player.tscn" id="14_0eyhq"]
+[ext_resource type="Script" path="res://scenes/testing_scene/Killzone.gd" id="15_3835b"]
+
+[sub_resource type="Animation" id="Animation_2eq15"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("JogadorVencedor:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("JogarNovamente:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8ixtu"]
+resource_name = "game_over"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.5, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.552941, 0.8, 0.964706, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("JogadorVencedor:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("JogarNovamente:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.3, 3.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.7, 3.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"release_keyboard"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_na4tr"]
+_data = {
+"RESET": SubResource("Animation_2eq15"),
+"game_over": SubResource("Animation_8ixtu")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_riqb7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_i7pm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pljx7")
+}],
+"loop": true,
+"name": &"victory_blue",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_8n3uf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_li1td")
+}],
+"loop": true,
+"name": &"victory_green",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_255p1"]
+size = Vector2(865, 45)
+
+[node name="MultiPlayerLevel" type="Node2D"]
+position = Vector2(-1, 0)
+script = ExtResource("1_h4p6u")
+metadata/_edit_lock_ = true
+
+[node name="Ui" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="ArcadeMachine" type="Sprite2D" parent="Ui"]
+position = Vector2(573.706, 333.241)
+scale = Vector2(1.0997, 1.0997)
+texture = ExtResource("2_mhmy2")
+metadata/_edit_lock_ = true
+
+[node name="Fade" type="ColorRect" parent="Ui"]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Ui"]
+libraries = {
+"": SubResource("AnimationLibrary_na4tr")
+}
+
+[node name="JogadorVencedor" type="RichTextLabel" parent="Ui"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -1.0
+offset_top = 31.0
+offset_right = 1154.0
+offset_bottom = 219.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_pould")
+theme_override_font_sizes/normal_font_size = 128
+bbcode_enabled = true
+text = "[center][shake rate=3 level=10][tornado freq=5 radius=5]Jogador 1
+venceu!"
+
+[node name="JogarNovamente" type="RichTextLabel" parent="Ui"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -2.0
+offset_top = 446.0
+offset_right = 1148.0
+offset_bottom = 548.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.94902, 0.94902, 0.94902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_qxj4k")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center][wave amp=25 freq=5]Jogar
+novamente?"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ui"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(580, 325)
+scale = Vector2(5.5, 5.5)
+sprite_frames = SubResource("SpriteFrames_riqb7")
+animation = &"victory_blue"
+frame_progress = 0.801169
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Ui"]
+layer = -1
+
+[node name="AreaDaBrincadeirinha" type="ColorRect" parent="Ui/CanvasLayer"]
+offset_left = 333.0
+offset_top = 80.0
+offset_right = 813.0
+offset_bottom = 480.0
+color = Color(0.756863, 0.945098, 1, 1)
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="Node" parent="."]
+
+[node name="GrassPlatform1" parent="Floor" instance=ExtResource("9_qayy2")]
+position = Vector2(339, 465)
+
+[node name="GrassPlatform2" parent="Floor" instance=ExtResource("9_qayy2")]
+position = Vector2(375, 465)
+
+[node name="GrassPlatform3" parent="Floor" instance=ExtResource("9_qayy2")]
+position = Vector2(411, 465)
+
+[node name="GrassPlatform4" parent="Floor" instance=ExtResource("9_qayy2")]
+position = Vector2(447, 465)
+
+[node name="GrassPlatform5" parent="Floor" instance=ExtResource("9_qayy2")]
+position = Vector2(483, 465)
+
+[node name="GrassPlatform6" parent="Floor" instance=ExtResource("9_qayy2")]
+position = Vector2(519, 465)
+
+[node name="GrassPlatform7" parent="Floor" instance=ExtResource("9_qayy2")]
+position = Vector2(555, 465)
+
+[node name="GrassPlatform8" parent="Floor" instance=ExtResource("9_qayy2")]
+position = Vector2(591, 465)
+
+[node name="GrassPlatform9" parent="Floor" instance=ExtResource("9_qayy2")]
+position = Vector2(627, 465)
+
+[node name="GrassPlatform10" parent="Floor" instance=ExtResource("9_qayy2")]
+position = Vector2(663, 465)
+
+[node name="GrassPlatform11" parent="Floor" instance=ExtResource("9_qayy2")]
+position = Vector2(699, 465)
+
+[node name="GrassPlatform12" parent="Floor" instance=ExtResource("9_qayy2")]
+position = Vector2(735, 465)
+
+[node name="GrassPlatform13" parent="Floor" instance=ExtResource("9_qayy2")]
+position = Vector2(771, 465)
+
+[node name="GrassPlatform14" parent="Floor" instance=ExtResource("9_qayy2")]
+position = Vector2(807, 465)
+
+[node name="Game" type="Node2D" parent="."]
+position = Vector2(336, 80)
+script = ExtResource("10_eyjte")
+metadata/_edit_lock_ = true
+
+[node name="DynamicCamera2D" type="Camera2D" parent="Game"]
+anchor_mode = 0
+limit_left = 0
+limit_right = 1152
+limit_bottom = 648
+limit_smoothed = true
+position_smoothing_enabled = true
+script = ExtResource("11_60ked")
+
+[node name="PlatformController" parent="Game" instance=ExtResource("12_fgluc")]
+metadata/_edit_lock_ = true
+
+[node name="Players" type="Node2D" parent="Game"]
+script = ExtResource("13_u2qsq")
+metadata/_edit_lock_ = true
+
+[node name="Player1" parent="Game/Players" instance=ExtResource("14_0eyhq")]
+position = Vector2(94, 274)
+
+[node name="Player2" parent="Game/Players" instance=ExtResource("14_0eyhq")]
+position = Vector2(375, 297)
+active_player = "player2"
+
+[node name="MaxHeight" type="Marker2D" parent="Game"]
+position = Vector2(0, 193)
+
+[node name="Killzone" type="Area2D" parent="Game/MaxHeight"]
+position = Vector2(0, 1)
+script = ExtResource("15_3835b")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/MaxHeight/Killzone"]
+position = Vector2(272, 503)
+shape = SubResource("RectangleShape2D_255p1")
+
+[connection signal="body_entered" from="Game/MaxHeight/Killzone" to="Game/MaxHeight/Killzone" method="_on_body_entered" flags=18]

@@ -14,6 +14,7 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("start_game") && is_active:
+		start_multiplayer_game.emit($CharacterPickers/CharacterPicker1.active_skin, $CharacterPickers/CharacterPicker2.active_skin)
 		print("inputou start_game")
 
 

@@ -32,24 +32,20 @@ func connect_multiplayer_menu_signals():
 
 
 func open_multiplayer_tab():
-	print("Clicou no multiplayer")
 	$AnimationPlayer.play("fade_in_multiplayer_menu")
 	$MultiplayerMenu.is_active = true
 
 
 func open_singleplayer_tab():
-	print("Clicou no singleplayer")
 	$AnimationPlayer.play("fade_in_singleplayer_menu")
 	$SinglePlayerMenu.is_active = true
 
 
 func close_singleplayer_tab():
-	print("clicou pra voltar do singleplayer")
 	$AnimationPlayer.play("fade_out_singleplayer_menu")
 
 
 func close_multiplayer_tab():
-	print("clicou pra voltar do singleplayer")
 	$AnimationPlayer.play("fade_out_multiplayer_menu")
 
 
@@ -59,9 +55,10 @@ func emit_start_singleplayer_game_signal(player_color:String):
 
 
 func emit_start_multiplayer_game_signal(player1_color:String, player2_color:String):
-	print("SinglePlayerMenu is emiting the signal 'close_singleplayer_tab'")
+	print("MenuController is emiting the signal 'close_singleplayer_tab'")
 	emit_signal("start_multiplayer_game", player1_color, player2_color)
 
 
 func emit_close_game_signal():
+	print("MenuController is emiting the signal 'close_game")
 	emit_signal("close_game")

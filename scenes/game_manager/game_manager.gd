@@ -2,7 +2,7 @@ extends Node2D
 
 var menu_controller = preload("res://scenes/menu_controller/menu_controller.tscn")
 var singleplayer_level = preload("res://scenes/levels/single_player/single_player_level1/single_player_level1.tscn")
-var multiplayer_level = preload("res://scenes/testing_scene/testing_scene.tscn")
+var multiplayer_level = preload("res://scenes/levels/multi_player/multi_player_level.tscn")
 
 
 func _ready():
@@ -25,18 +25,17 @@ func instantiate_main_menu():
 
 
 func start_single_player(player_color:String):
-	print(player_color)
 	clean_children_nodes()
 	var instance = singleplayer_level.instantiate()
 	add_child(instance)
 	instance.set_player_color(player_color)
-	
 
 
-func start_multi_player():
+func start_multi_player(player1_color:String, player2_color:String):
 	clean_children_nodes()
 	var instance = multiplayer_level.instantiate()
 	add_child(instance)
+	instance.set_player_color(player1_color, player2_color)
 
 
 func close_game():

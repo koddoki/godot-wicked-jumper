@@ -2,7 +2,7 @@ extends Control
 
 var press_any_key_label = preload("res://scenes/press_any_key_label/press_any_key_label.tscn")
 var game_start_timer = preload("res://scenes/press_any_key_label/press_any_key_label.tscn")
-var is_active = true
+var is_active = false
 var seconds_until_game_start : int
 
 
