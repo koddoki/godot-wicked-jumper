@@ -1,0 +1,169 @@
+[gd_scene load_steps=9 format=3 uid="uid://fw2ceabidro3"]
+
+[ext_resource type="Script" path="res://scenes/credits_menu/credits_menu.gd" id="1_s60j8"]
+[ext_resource type="FontFile" uid="uid://ehad7l3e4y2d" path="res://assets/fonts/Kenney Pixel.ttf" id="2_hvupy"]
+[ext_resource type="Texture2D" uid="uid://bjika8ykcbe41" path="res://assets/Characters/character_0002.png" id="3_mu1dv"]
+[ext_resource type="Texture2D" uid="uid://b5fdpik3pkuuf" path="res://assets/Characters/character_0003.png" id="4_fuqug"]
+[ext_resource type="Texture2D" uid="uid://dyxl7accfcsh5" path="res://assets/logo/kenney_logo.png" id="5_e55ob"]
+[ext_resource type="Texture2D" uid="uid://brgxhjggn0dm6" path="res://assets/logo/github_logo.png" id="6_lrnn2"]
+[ext_resource type="Texture2D" uid="uid://5oedgoea4uqa" path="res://assets/logo/linkedin_logo.png" id="7_rag0p"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kacm3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mu1dv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fuqug")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="CreditsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s60j8")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.454902, 0.25098, 0.956863, 1)
+metadata/_edit_lock_ = true
+
+[node name="ReturnButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 57.0
+offset_right = 105.0
+offset_bottom = 113.0
+text = "Voltar"
+metadata/_edit_lock_ = true
+
+[node name="CreditsLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_top = 31.0
+offset_right = 1152.0
+offset_bottom = 133.0
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_hvupy")
+theme_override_font_sizes/normal_font_size = 128
+bbcode_enabled = true
+text = "[center][shake rate=3 level=10][tornado freq=5 radius=5]Créditos"
+metadata/_edit_lock_ = true
+
+[node name="Art" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Art"]
+position = Vector2(938, 317)
+scale = Vector2(6.58333, 6.99479)
+sprite_frames = SubResource("SpriteFrames_kacm3")
+animation = &"idle"
+frame_progress = 0.920602
+
+[node name="ArtLabel" type="RichTextLabel" parent="Art"]
+clip_contents = false
+offset_left = 764.0
+offset_top = 149.0
+offset_right = 1114.0
+offset_bottom = 221.0
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_hvupy")
+theme_override_font_sizes/normal_font_size = 96
+bbcode_enabled = true
+text = "[center][shake rate=3 level=10][tornado freq=5 radius=5]Arte"
+fit_content = true
+
+[node name="KenneyLogo" type="Sprite2D" parent="Art"]
+texture_filter = 2
+position = Vector2(942, 437)
+scale = Vector2(0.277083, 0.277083)
+texture = ExtResource("5_e55ob")
+
+[node name="ArtLabel2" type="RichTextLabel" parent="Art"]
+clip_contents = false
+offset_left = 769.0
+offset_top = 470.0
+offset_right = 1119.0
+offset_bottom = 518.0
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_hvupy")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center][shake rate=2level=5][tornado freq=3 radius=3]KENNEY.NL"
+fit_content = true
+
+[node name="Development" type="Node2D" parent="."]
+
+[node name="GitHubLabel" type="RichTextLabel" parent="Development"]
+clip_contents = false
+offset_left = 178.0
+offset_top = 340.0
+offset_right = 576.0
+offset_bottom = 388.0
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_hvupy")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[shake rate=2level=5][tornado freq=3 radius=3]github.com/koddoki"
+fit_content = true
+metadata/_edit_lock_ = true
+
+[node name="GithubLogo" type="Sprite2D" parent="Development"]
+texture_filter = 1
+position = Vector2(120, 361)
+scale = Vector2(0.0410156, 0.0410156)
+texture = ExtResource("6_lrnn2")
+
+[node name="ArtLabel" type="RichTextLabel" parent="Development"]
+clip_contents = false
+offset_left = 57.0
+offset_top = 224.0
+offset_right = 597.0
+offset_bottom = 296.0
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_hvupy")
+theme_override_font_sizes/normal_font_size = 96
+bbcode_enabled = true
+text = "[center][shake rate=3 level=10][tornado freq=5 radius=5]Desenvolvimento"
+fit_content = true
+
+[node name="GitHubLabel2" type="RichTextLabel" parent="Development"]
+clip_contents = false
+offset_left = 180.0
+offset_top = 435.0
+offset_right = 717.0
+offset_bottom = 492.0
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_hvupy")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[shake rate=2level=5][tornado freq=3 radius=3]/in/bruno-vinicius-lopes/"
+fit_content = true
+
+[node name="LinkedinLogo" type="Sprite2D" parent="."]
+texture_filter = 2
+position = Vector2(120, 463)
+scale = Vector2(0.162109, 0.162109)
+texture = ExtResource("7_rag0p")
+
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed" flags=18]

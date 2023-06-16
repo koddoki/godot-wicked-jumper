@@ -2,6 +2,7 @@ extends Control
 
 signal multiplayer_selected
 signal singleplayer_selected
+signal credits_selected
 signal close_game
 
 
@@ -18,3 +19,8 @@ func _on_multiplayer_button_pressed():
 func _on_exit_button_pressed():
 	print("MainMenu is emiting the signal 'close_game'")
 	emit_signal("close_game")
+
+
+func _on_credits_button_pressed():
+	print("MainMenu is emiting the signal 'credits_selected'")
+	emit_signal("credits_selected")

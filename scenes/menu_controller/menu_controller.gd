@@ -7,6 +7,7 @@ signal start_multiplayer_game(player1_color:String, player2_color:String)
 @onready var main_menu = $MainMenu
 @onready var singleplayer_menu = $SinglePlayerMenu
 @onready var multiplayer_menu = $MultiplayerMenu
+@onready var credits_menu = "batata"
 
 
 func _ready():

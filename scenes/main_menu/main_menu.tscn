@@ -132,6 +132,37 @@ bbcode_enabled = true
 text = "[center][wave amp=25 freq=5]M U L T I J O G A D O R"
 fit_content = true
 
+[node name="CreditsButton" type="Button" parent="Buttons/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("2_ojyi6")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_88eor")
+metadata/_edit_group_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="Buttons/VBoxContainer/CreditsButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_xntsw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Buttons/VBoxContainer/CreditsButton/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.94902, 0.94902, 0.94902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_ojyi6")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center][wave amp=30 freq=4]C R é D I T O S"
+fit_content = true
+
 [node name="ExitButton" type="Button" parent="Buttons/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -165,4 +196,5 @@ fit_content = true
 
 [connection signal="pressed" from="Buttons/VBoxContainer/SinglePlayerButton" to="." method="_on_single_player_button_pressed"]
 [connection signal="pressed" from="Buttons/VBoxContainer/MultiplayerButton" to="." method="_on_multiplayer_button_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Buttons/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
