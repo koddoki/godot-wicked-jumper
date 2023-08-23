@@ -22,17 +22,17 @@ func _process(_delta):
 	if player2.alive == false && is_match_going:
 		is_match_going = false
 		foi_de_base(player2.active_player)
-	if (not keyboard_locked && Input.is_action_just_pressed("any")):
+	if (not keyboard_locked && Input.is_action_just_pressed("start_game")):
 		get_tree().change_scene_to_file("res://scenes/temporary_main/temporary_main.tscn")
 
 func foi_de_base(which_player):
 	print (which_player)
 	if which_player == "player1":
 		ui_jogador_vencedor.text = "[center][shake rate=3 level=10][tornado freq=5 radius=5]Jogador 2\nvenceu!"
-		ui_animated_sprite.play("victory_blue")
+		ui_animated_sprite.play(player2.player_skin)
 	else:
 		ui_jogador_vencedor.text = "[center][shake rate=3 level=10][tornado freq=5 radius=5]Jogador 1\nvenceu!"
-		ui_animated_sprite.play("victory_green")
+		ui_animated_sprite.play(player1.player_skin)
 	ui_animation_player.play("game_over")
 
 func release_keyboard():

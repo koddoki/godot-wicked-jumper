@@ -1,13 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://83nka01miojl"]
+[gd_scene load_steps=17 format=3 uid="uid://83nka01miojl"]
 
 [ext_resource type="Script" path="res://scenes/levels/multi_player/multi_player_level.gd" id="1_h4p6u"]
 [ext_resource type="Texture2D" uid="uid://cgh4h4hvafche" path="res://assets/Background/arcade_machine.png" id="2_mhmy2"]
 [ext_resource type="FontFile" uid="uid://ehad7l3e4y2d" path="res://assets/fonts/Kenney Pixel.ttf" id="3_pould"]
 [ext_resource type="FontFile" uid="uid://7y1bjo8b42xe" path="res://assets/fonts/Kenney Pixel Square.ttf" id="4_qxj4k"]
-[ext_resource type="Texture2D" uid="uid://bjika8ykcbe41" path="res://assets/Characters/character_0002.png" id="5_i7pm7"]
-[ext_resource type="Texture2D" uid="uid://b5fdpik3pkuuf" path="res://assets/Characters/character_0003.png" id="6_pljx7"]
-[ext_resource type="Texture2D" uid="uid://by0ss5f7r057" path="res://assets/Characters/character_0000.png" id="7_8n3uf"]
-[ext_resource type="Texture2D" uid="uid://bb6lyc30csvqb" path="res://assets/Characters/character_0001.png" id="8_li1td"]
+[ext_resource type="SpriteFrames" uid="uid://dleteu0iovyi0" path="res://assets/Characters/character_animations.tres" id="5_1r48e"]
 [ext_resource type="PackedScene" uid="uid://bxvem3k70ecnc" path="res://scenes/platform/grass_platform/grass_platform.tscn" id="9_qayy2"]
 [ext_resource type="Script" path="res://scenes/testing_scene/Game.gd" id="10_eyjte"]
 [ext_resource type="Script" path="res://scenes/testing_scene/DinamicCamera2D.gd" id="11_60ked"]
@@ -139,31 +136,6 @@ _data = {
 "game_over": SubResource("Animation_8ixtu")
 }
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_riqb7"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_i7pm7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_pljx7")
-}],
-"loop": true,
-"name": &"victory_blue",
-"speed": 2.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_8n3uf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_li1td")
-}],
-"loop": true,
-"name": &"victory_green",
-"speed": 2.0
-}]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_255p1"]
 size = Vector2(865, 45)
 
@@ -223,9 +195,8 @@ novamente?"
 modulate = Color(1, 1, 1, 0)
 position = Vector2(580, 325)
 scale = Vector2(5.5, 5.5)
-sprite_frames = SubResource("SpriteFrames_riqb7")
-animation = &"victory_blue"
-frame_progress = 0.801169
+sprite_frames = ExtResource("5_1r48e")
+animation = &"blue"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Ui"]
 layer = -1
@@ -305,6 +276,7 @@ metadata/_edit_lock_ = true
 
 [node name="Player1" parent="Game/Players" instance=ExtResource("14_0eyhq")]
 position = Vector2(94, 274)
+active_player = "player1"
 
 [node name="Player2" parent="Game/Players" instance=ExtResource("14_0eyhq")]
 position = Vector2(375, 297)

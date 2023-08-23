@@ -13,7 +13,7 @@ script = ExtResource("1_17tmj")
 [node name="PlayerAnimatedSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = ExtResource("2_p11ek")
-animation = &"green_fall"
+animation = &"orange_jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
